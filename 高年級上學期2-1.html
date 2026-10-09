@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六號戰情室：期中考前哨站 (第4單元重磅釋出)</title>
+    <!-- Google tag (gtag.js) 預留區 -->
+    
+    <style>
+        :root {
+            --primary-color: #1a252f;
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-light: #7f8c8d;
+            --yt-color: #d32f2f;
+            --sp-color: #1DB954;
+            --qz-color: #2980b9;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'LiHei Pro', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c3e50 100%);
+            color: white;
+            text-align: center;
+            padding: 3.5rem 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.05)"/></svg>');
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #bdc3c7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro-box {
+            background-color: #fff;
+            border-left: 6px solid var(--accent-color);
+            padding: 1.8rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            font-size: 1.1rem;
+        }
+        
+        .intro-box strong {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background-color: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tag-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .card-tag {
+            background-color: #fef0e6;
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .tag-grade {
+            background-color: #e3f2fd;
+            color: var(--qz-color);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .btn-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .btn-yt {
+            background-color: #ffebee;
+            color: var(--yt-color);
+            border: 1px solid #ffcdd2;
+        }
+        .btn-yt:hover { background-color: #ffcdd2; }
+
+        .btn-sp {
+            background-color: #e8f5e9;
+            color: var(--sp-color);
+            border: 1px solid #c8e6c9;
+        }
+        .btn-sp:hover { background-color: #c8e6c9; }
+
+        .btn-qz {
+            grid-column: 1 / -1;
+            background-color: #e3f2fd;
+            color: var(--qz-color);
+            border: 1px solid #bbdefb;
+        }
+        .btn-qz:hover { background-color: #bbdefb; }
+
+        /* 贊助區塊樣式 */
+        .support-section {
+            text-align: center;
+            padding: 3.5rem 1.5rem;
+            background-color: #ffffff;
+            border-top: 3px dashed #bdc3c7;
+            margin-top: 4rem;
+        }
+        
+        .support-section h3 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+        
+        .support-section p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .qr-code {
+            max-width: 220px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 1.5rem auto;
+            border: 1px solid #e0e6ed;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: block;
+        }
+
+        .btn-support {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-support:hover {
+            background-color: #d35400;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            background-color: #ecf0f1;
+            border-top: 1px solid #e0e6ed;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>期中考前哨站 🎯</h1>
+    <p>第4單元重磅釋出！看動畫、聽重點、寫測驗，三效合一破解大魔王</p>
+</header>
+
+<div class="container">
+    <div class="intro-box">
+        <strong>💡 總監系統提示：</strong><br><br>
+        各版本社會科已經進入第 4 個單元，代表**期中考的腳步近了**！千萬不要等到考前一週才開始死背。請家長根據孩子的年級與版本，利用「影片理解因果」、「Podcast 零碎時間複習」、「實戰測驗抓漏」的三合一黃金組合，提前為期中考佈局。
+    </div>
+
+    <div class="grid">
+        <!-- 翰林 6上 -->
+        <div class="card">
+            <div class="tag-group">
+                <div class="card-tag">翰林版</div>
+                <div class="card-tag tag-grade">六年級 2-2</div>
+            </div>
+            <div class="card-title">理財遊戲開跑！記帳+目標+風險評估，段考必考重點一次通關</div>
+            <div class="btn-group">
+                <a href="https://youtu.be/FrkxzZgVTmA" target="_blank" class="btn btn-yt">▶️ 觀看動畫</a>
+                <a href="https://open.spotify.com/episode/5PVJ32Iy8ahAfmMXJHAAyw?si=OuAgf5PXQHmQNZzY_vVzgg" target="_blank" class="btn btn-sp">🎧 聽 Podcast</a>
+                <a href="https://rfvfgh119.github.io/social-studies-quizzes/%E7%BF%B0%E6%9E%97%E5%9C%8B%E5%B0%8F%E7%A4%BE%E6%9C%836%E4%B8%8A2-2%E7%82%BA%E4%BB%80%E9%BA%BC%E6%88%91%E5%80%91%E9%9C%80%E8%A6%81%E7%90%86%E8%B2%A1%E8%A6%8F%E7%95%AB%EF%BC%9Fok.html" target="_blank" class="btn btn-qz">📝 開始實戰測驗</a>
+            </div>
+        </div>
+
+        <!-- 康軒 6上 -->
+        <div class="card">
+            <div class="tag-group">
+                <div class="card-tag">康軒版</div>
+                <div class="card-tag tag-grade">六年級 2-1</div>
+            </div>
+            <div class="card-title">從「巧妻」到「性平」！這不是歷史課，這是你的社會觀念轉職攻略！</div>
+            <div class="btn-group">
+                <a href="https://youtu.be/B4mY6iQVtwo" target="_blank" class="btn btn-yt">▶️ 觀看動畫</a>
+                <a href="https://open.spotify.com/episode/2dS3RmAYakgvabOOtFelkr?si=DiPXw77GRQCzDDNoO3MzVw" target="_blank" class="btn btn-sp">🎧 聽 Podcast</a>
+                <a href="https://rfvfgh119.github.io/social-studies-quizzes/康軒社會-6上2-1-社會變遷下的個人發展與族群文化.html" target="_blank" class="btn btn-qz">📝 開始實戰測驗</a>
+            </div>
+        </div>
+
+        <!-- 南一 6上 -->
+        <div class="card">
+            <div class="tag-group">
+                <div class="card-tag">南一版</div>
+                <div class="card-tag tag-grade">六年級 2-1</div>
+            </div>
+            <div class="card-title">背政策跟數據真的要我命？別慌！讀懂日治時期的「版本更新日誌」，輕鬆破關！</div>
+            <div class="btn-group">
+                <a href="https://youtu.be/AcPk41x07cM" target="_blank" class="btn btn-yt">▶️ 觀看動畫</a>
+                <a href="https://open.spotify.com/episode/4uM7QKc02nmJStYcZEKEk2?si=ubLxaweJQQGsS_48Ulx9YQ" target="_blank" class="btn btn-sp">🎧 聽 Podcast</a>
+                <a href="https://rfvfgh119.github.io/social-studies-quizzes/南一國小社會6上2-1快速變動的社會ok.html" target="_blank" class="btn btn-qz">📝 開始實戰測驗</a>
+            </div>
+        </div>
+
+        <!-- 翰林 5上 -->
+        <div class="card">
+            <div class="tag-group">
+                <div class="card-tag">翰林版</div>
+                <div class="card-tag tag-grade">五年級 2-1</div>
+            </div>
+            <div class="card-title">背歷史年代太痛苦？掌握傳說NPC思維，一秒看透大航海時代！</div>
+            <div class="btn-group">
+                <a href="https://youtu.be/oElpJl6SOpA" target="_blank" class="btn btn-yt">▶️ 觀看動畫</a>
+                <a href="https://open.spotify.com/episode/2MVI5JVzYsRLyVvipzSfJy?si=bvRJqSgdQMq2Em_cDpIy7w" target="_blank" class="btn btn-sp">🎧 聽 Podcast</a>
+                <a href="https://rfvfgh119.github.io/social-studies-quizzes/翰林社會5上2-1臺灣為什麼在大航海時代崛起.html" target="_blank" class="btn btn-qz">📝 開始實戰測驗</a>
+            </div>
+        </div>
+
+        <!-- 康軒 5上 -->
+        <div class="card">
+            <div class="tag-group">
+                <div class="card-tag">康軒版</div>
+                <div class="card-tag tag-grade">五年級 2-1</div>
+            </div>
+            <div class="card-title">背地理快暈了？把臺灣島當成遊戲地圖，地形河川全解鎖！</div>
+            <div class="btn-group">
+                <a href="https://youtu.be/S5uwrvHBBNA" target="_blank" class="btn btn-yt">▶️ 觀看動畫</a>
+                <a href="https://open.spotify.com/episode/3AIaZJ4SlwRgh248hhI1YR?si=TZVVvBodSIaHOrSmt7Otzg" target="_blank" class="btn btn-sp">🎧 聽 Podcast</a>
+                <a href="https://rfvfgh119.github.io/social-studies-quizzes/康軒社會5上2-1地形如何影響.html" target="_blank" class="btn btn-qz">📝 開始實戰測驗</a>
+            </div>
+        </div>
+
+        <!-- 南一 5上 -->
+        <div class="card">
+            <div class="tag-group">
+                <div class="card-tag">南一版</div>
+                <div class="card-tag tag-grade">五年級 2-1</div>
+            </div>
+            <div class="card-title">背原住民族超痛苦？因為你沒玩過這套《台灣版島嶼生存戰》攻略</div>
+            <div class="btn-group">
+                <a href="https://youtu.be/oVdfJND-tKQ" target="_blank" class="btn btn-yt">▶️ 觀看動畫</a>
+                <a href="https://open.spotify.com/episode/1RglH19D68OZ73EIl7HUli?si=9a-TVEpdRgu4Czu3PaDmCQ" target="_blank" class="btn btn-sp">🎧 聽 Podcast</a>
+                <a href="https://rfvfgh119.github.io/social-studies-quizzes/南一國小社會5上2-1島嶼上的子民.html" target="_blank" class="btn btn-qz">📝 開始實戰測驗</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 燃料補給站 -->
+<div class="support-section">
+    <h3>☕ 給研發中心一劑續航燃料</h3>
+    <p>如果這套「期中考前哨站」成功幫孩子打通學習邏輯、避開段考陷阱，歡迎請叔叔喝杯咖啡，支持新關卡的持續開發！</p>
+    
+    <!-- 叔叔，這裡一樣記得替換成你的 QR Code 圖片檔名或網址 -->
+    <img src="請貼上你的_QR_Code_圖片網址.jpg" alt="請叔叔喝咖啡 QR Code" class="qr-code">
+    
+    <a href="https://portaly.cc/uncle6/support" target="_blank" class="btn-support">前往線上燃料補給站</a>
+</div>
+
+<footer>
+    © 2026 六號叔叔說故事. All rights reserved.<br>
+    專為國小高年級社會科打造的視覺化歷史彈藥庫。
+</footer>
+
+</body>
+</html>
